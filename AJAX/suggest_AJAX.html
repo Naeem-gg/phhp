@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+        function m1(str) {
+            var ob = false;
+            ob = new XMLHttpRequest();
+            ob.open("GET", "suggest_AJAX.php?s=" + str);
+            ob.send();
+            ob.onreadystatechange = function() {
+                if (ob.readyState == 4 && ob.status == 200) {
+                    document.getElementById("sg").innerHTML = ob.responseText;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        Search : <input type=text name=sc size="20" onkeyup="m1(form.sc.value)">
+        <input type=button value="SEARCH" onclick="m1(form.sc.value)">
+    </form>
+    Suggestions
+    :
+    <span id="sg"></span><br>
+</body>
+
+</html>
+
