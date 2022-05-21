@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Inserting Contents Before or After the Elements using jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#dt").after("<p>&mdash; The End &mdash;</p>");
+            $("#dt").before("<p>&mdash; Demo Text &mdash;</p>");
+            // Add content after heading on button click
+            $("button.insert-after").click(function () {
+                $("h1").after('<img src="marker-right.gif" alt="Symbol right">');
+            });
+            // Add content before heading on button click
+            $("button.insert-before").click(function () {
+                $("h1").before('<img src="marker-left.gif" alt="Symbol left">');
+            });
+        });
+    </script>
+    <style>
+        h1 {
+            display: inline-block;
+            /* To place marker image and heading in one line */
+        }
+
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello World</h1>
+    <hr>
+    <button type="button" class="insert-before">Insert Before</button>
+    <button type="button" class="insert-after">Insert After</button>
+    <hr>
+    <div id="dt">
+        <p>This is demo...!</p>
+    </div>
+</body>
+
+</html>
