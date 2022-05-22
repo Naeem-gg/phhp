@@ -14,20 +14,21 @@
     </style>
 
     <script type="text/javascript">
-        function print() {
-            var ob = false;
-            ob = new XMLHttpRequest();
-
-            ob.open("GET", "contact_AJAX.php"); //emailid="+eid);
-            ob.send();
-
-            ob.onreadystatechange = function() {
-                if (ob.readyState == 4 && ob.status == 200) {
-                    document.getElementById("i").innerHTML = ob.responseText;
+        function print()
+        {
+            
+            var obj = new XMLHttpRequest();
+            obj.open("GET","contact_AJAX.php");
+            obj.send();
+            obj.onreadystatechange = function(){
+                if(obj.readyState===4 && obj.status===200)
+                {
+                    document.getElementById("i").innerHTML=obj.responseText;
                 }
             }
         }
     </script>
+    <title>contact_AJAX</title>
 </head>
 
 <body>
